@@ -1,9 +1,8 @@
-// React
-// Styling
+// Component rendering a list of featured projects.
+// Shows the first 4 projects by default and expands to show all when the user clicks the button.
 
-// Importerar komponenten som visar ETT projektkort
 import ProjectsCard from "./ProjectsCard";
-import BusinessSiteImg from "../assets/BusinessSite.png";
+import BusinessSiteImg from "../assets/Coffee2.png";
 import WeatherAppImg from "../assets/WeatherApp.png";
 import RecipeLibraryImg from "../assets/RecipeLibrary.png";
 import ReadingRoomImg from "../assets/ReadingRoom.png";
@@ -15,21 +14,30 @@ import styled from "styled-components";
 import { useState } from "react";
 import ArrowDownIcon from "../assets/icons/ArrowDown.svg";
 
+/* Wrapper section for the entire projects area */
 const ProjectsSection = styled.section`
   background-color: white;
 `;
+
+/* Title styling for the projects section */
 const ProjectsTitle = styled.h2`
   color: black;
   text-align: center;
-  padding: 80px 0 40px;
+  padding: 20px 0 10px;
+
+  @media (min-width: 768px) {
+    padding: 80px 0 40px;
+  }
 `;
 
+/* Container for the "See more" button */
 const ButtonWrapper = styled.div`
   text-align: center;
   margin-top: 10px;
   padding-bottom: 60px;
 `;
 
+/* Button used to toggle showing more or fewer projects */
 const MoreButton = styled.button`
   background: #ffffff;
   color: #000000;
@@ -39,7 +47,7 @@ const MoreButton = styled.button`
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  width: 300px;
+  width: 280px;
 
   display: inline-flex;
   align-items: center;
@@ -48,16 +56,20 @@ const MoreButton = styled.button`
   &:hover {
     transform: scale(1.03);
   }
+  @media (min-width: 768px) {
+    width: 300px;
+  }
 `;
 
+/* Arrow icon that rotates depending on expand/collapse state */
 const IconImage = styled.img`
   width: 35px;
   height: 35px;
-  margin-right: 15px; /* lite luft mellan pil och text */
+  margin-right: 15px;
   transform: ${({ open }) => (open ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 
-//Alla projekt i en Array
+/* Array containing all project data */
 const allProjects = [
   {
     title: "Business site",
@@ -66,8 +78,8 @@ const allProjects = [
     imageSrc: BusinessSiteImg,
     imageAlt: "Screenshot of a coffee themed business site",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    liveUrl: "https://legacy-coffee.netlify.app/",
     codeUrl: "https://github.com/AgnesSj01/js-project-business-site",
+    liveUrl: "https://legacy-coffee.netlify.app/",
   },
   {
     title: "Weather app",
@@ -145,8 +157,10 @@ const allProjects = [
 ];
 
 export default function Projects() {
+  // Controls whether all projects should be shown or only the first four
   const [showAll, setShowAll] = useState(false);
 
+  // Either returns all projects or the first four
   const visibleProjects = showAll ? allProjects : allProjects.slice(0, 4);
 
   return (
@@ -156,8 +170,6 @@ export default function Projects() {
       {visibleProjects.map((project) => (
         <ProjectsCard key={project.title} {...project} />
       ))}
-
-      {/* enkel knapp utan extra styling – du kan styla den senare om du vill */}
       {allProjects.length > 4 && (
         <ButtonWrapper>
           <MoreButton type="button" onClick={() => setShowAll((prev) => !prev)}>

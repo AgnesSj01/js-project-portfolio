@@ -4,23 +4,28 @@ import githubIcon from "../assets/icons/github.svg";
 import facebookIcon from "../assets/icons/Facebook.svg";
 import styled from "styled-components";
 
+/* Title at the top of the contact section */
 const Talktitle = styled.h2`
-  margin: 40px 0px 10px;
-`;
-const AgnesImage = styled.img`
-  width: 180px; /* gör bilden mindre */
-  height: 180px; /* gör den perfekt rund */
-  border-radius: 50%; /* rund */
-  object-fit: cover; /* beskär snyggt */
+  margin: 60px 0px 10px;
+  padding-top: 30px;
 `;
 
+/* Circular portrait image */
+const AgnesImage = styled.img`
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+`;
+
+/* Main container for the contact section */
 const Contact = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center; /* centrerar horisontellt */
-  justify-content: center; /* centrerar vertikalt om det behövs */
-  text-align: center; /* centrerar texten */
-  gap: 30px; /* valfritt avstånd mellan bild och text */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
   background-color: black;
   color: white;
   padding: 0 0 80px 0;
@@ -28,6 +33,7 @@ const Contact = styled.section`
   margin-top: 80px;
 `;
 
+/* List of contact details */
 const ContactList = styled.ul`
   list-style: none;
   display: flex;
@@ -37,6 +43,7 @@ const ContactList = styled.ul`
   margin-top: 10px;
 `;
 
+/* Each contact line (name, phone, email) */
 const Li = styled.li`
   font-size: 20px;
   font-weight: 550;
@@ -52,15 +59,22 @@ const Li = styled.li`
     text-decoration: underline;
   }
 
-  @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 28px;
+  @media (min-width: 768px) {
+    font-size: 30px; /* tablet */
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 30px; /* desktop */
   }
 `;
+
+/* Social media icon images */
 const IconImage = styled.img`
   width: 35px;
   height: 35px;
 `;
 
+/* Row displaying social media icons horizontally */
 const IconRow = styled.div`
   display: flex;
   gap: 20px; /* avstånd mellan ikonerna */
@@ -68,6 +82,11 @@ const IconRow = styled.div`
   justify-content: center;
 `;
 
+/* 
+  Contact / Let's Talk section.
+  Shows a title, portrait image, contact details,
+  and a row of social media icons.
+*/
 export default function LetsTalk() {
   return (
     <Contact>

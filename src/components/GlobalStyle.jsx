@@ -1,7 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
+/* 
+  Basic global reset:
+  - Removes default margins and padding
+  - Sets border-box sizing for all elements
+  - Defines base font, colors, and line-height
+  - Prevents horizontal overflow
+  - Makes images responsive
+*/
+
 export const GlobalStyle = createGlobalStyle`
-  /* Reset */
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #000;
     background: #fff;
     overflow-x: hidden;
-    line-height: 1.6; /* Standard brödtext */
+    line-height: 1.6; 
   }
 
   img {
@@ -28,19 +36,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* ----------------------------- */
-  /* MOBILE-FIRST TYPOGRAPHY */
+  /* MOBILE-FIRST*/
   /* ----------------------------- */
 
 
   h1 {
-    font-size: 35px;      /* Mobil */
+    font-size: 40px;      /* Mobil */
     font-weight:bold; 
     font-family: "Inter", sans-serif;
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 38px;
     font-family: "Inter", sans-serif;
+    
   }
 
   h3 {
@@ -52,26 +61,26 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
 font-family: "Inter", sans-serif;
     margin: 0 auto; 
-    max-width: 750px;       /* bra läsbredd */
+    max-width: 750px;       
   }
 
   /* ----------------------------- */
   /* TABLET (≥ 768px) */
   /* ----------------------------- */
   @media (min-width: 768px) {
-    h1 { font-size: 60px; }
-    h2 { font-size: 32px; }
-    h3 { font-size: 22px; }
-    p  { font-size: 17px; }
+   h1 { font-size: 70px; letter-spacing: -0.5px; }
+    h2 { font-size: 60px; letter-spacing: -0.9px; font-weight: 700; }
+    h3 { font-size: 30px; letter-spacing: -0.3px; font-weight: 500;}
+    p  { font-size: 20px; letter-spacing: -0.1px;}
   }
 
   /* ----------------------------- */
   /* DESKTOP (≥ 1024px) */
   /* ----------------------------- */
   @media (min-width: 1024px) {
-    h1 { font-size: 80px; letter-spacing: -0.5px; }
-    h2 { font-size: 60px; letter-spacing: -0.5px; }
-    h3 { font-size: 24px; letter-spacing: -0.3px; }
-    p  { font-size: 18px; }
+    h1 { font-size: 100px; letter-spacing: -0.5px; }
+    h2 { font-size: 80px; letter-spacing: -0.9px; font-weight: 700; }
+    h3 { font-size: 30px; letter-spacing: -0.3px; font-weight: 500;}
+    p  { font-size: 18px; letter-spacing: -0.1px;}
   }
 `;

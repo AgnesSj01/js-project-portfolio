@@ -1,11 +1,16 @@
+// Component that displays a single "My Words" article preview.
+// Includes an image, date tag, title, short description, and a link button.
+
 import styled from "styled-components";
 import webIcon from "../assets/icons/web.svg";
 import { LinkButton } from "./LinkButton";
+import { Tag } from "./tag";
 
+/* Wrapper for the entire article preview block */
 const MyWordWrapper = styled.article`
   display: flex;
-  flex-direction: column; /* DEFAULT: mobil + tablet = kolumn */
-  gap: 60px;
+  flex-direction: column;
+  gap: 10px;
   background-color: #ffffff;
   color: #000000;
   padding: 20px 30px;
@@ -23,6 +28,7 @@ const MyWordWrapper = styled.article`
     padding-left: 150px;
     padding-right: 70px;
     padding-bottom: 70px;
+    gap: 90px;
   }
 
   @media (min-width: 768px) {
@@ -30,74 +36,100 @@ const MyWordWrapper = styled.article`
     flex-direction: row;
     align-items: flex-start;
     background-color: white;
-    padding-left: 30px;
+    padding-left: 60px;
     padding-right: 30px;
     padding-bottom: 20px;
+    gap: 20px;
   }
 `;
 
+/* Container for the article image */
 const ImageWord = styled.div`
   flex: 1;
-
-  /* MOBIL: centrera bilden */
   display: flex;
   justify-content: center;
 
   @media (min-width: 768px) {
-    /* TABLET + DESKTOP: vänsterställ igen */
     justify-content: flex-start;
   }
 `;
 
+/* The article image itself */
 const ProjectImage = styled.img`
-  width: 80%;
-  height: 300px; /* ← lägg till denna! justera efter din design */
-  object-fit: cover; /* ← snygg beskärning */
+  width: 90%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 12px;
   display: block;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 420px;
+  }
+  @media (min-width: 1024px) {
+    max-height: 300px;
+  }
 `;
+
+/* Column containing the text content and buttons */
 const ContentCol = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0px;
   text-align: left;
+
+  > span {
+    margin-bottom: 20px;
+  }
+
+  > h3 {
+    margin-bottom: 16px;
+  }
+
+  > p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 80px;
+    margin-bottom: 0px;
+
+    > span {
+      margin-bottom: 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    > span {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 35px;
+    }
+  }
 `;
 
-const SkillTag = styled.span`
-  padding: 8px 12px; /* mindre padding */
-  border-radius: 6px;
-  border: 1.5px solid black; /* tunnare border */
-  font-size: 18px; /* mindre text */
-  font-weight: 520;
-  width: 200px; /* så att den krymper efter innehåll */
-  margin-bottom: 12px;
-  text-align: center;
-  color: black;
-`;
+/* Wrapper for the link button */
 const ButtonsWrapper = styled.div`
-  margin-top: 24px;
-  align-items: flex-start; /* så de hamnar vänsterställda */
+  margin-top: 15px;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
+/* Icon used inside the link button */
 const IconImage = styled.img`
   width: 25px;
   height: 25px;
 `;
 
-const ButtonLabel = styled.span`
-  /* extra span för texten om du vill styra typografin senare */
-`;
+/* Label next to the icon in the button */
+const ButtonLabel = styled.span``;
 
-const Title = styled.h3`
-  margin: 0 0 8px 0; /* ⬅️ tar bort auto-center */
-  font-size: 24px;
-  font-weight: 700;
-  color: #000; /* 👈 tvingar rubriken att bli svart */
-`;
-
+/* Main component rendering a single article preview */
 export default function MyWords({
-  //Listar propsen
   title,
   description,
   imageSrc,
@@ -111,8 +143,9 @@ export default function MyWords({
         <ProjectImage src={imageSrc} alt={imageAlt} />
       </ImageWord>
       <ContentCol>
-        <SkillTag className="tag">{tags}</SkillTag>
-        <Title>{title}</Title>
+        <Tag>{tags}</Tag>
+
+        <h3>{title}</h3>
         <p>{description}</p>
 
         {articleUrl && (

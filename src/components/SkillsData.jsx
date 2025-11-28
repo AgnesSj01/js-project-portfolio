@@ -1,43 +1,46 @@
 import styled from "styled-components";
 import SkillCategory from "./SkillCategory";
 
+/* Wrapper for the entire skills section */
 const SkillsSection = styled.section`
   background-color: #000;
   color: #fff;
   padding: 60px 16px 80px;
 `;
 
+/* Section heading */
 const SkillTitle = styled.h2`
   margin-bottom: 40px;
   text-align: center;
 `;
 
+/* Layout wrapper for all skill categories.
+   Mobile/Tablet = single column
+   Desktop = multi-column row with wrapping */
 const CategoryRow = styled.div`
   display: flex;
-  flex-direction: column; /* MOBIL + TABLET = EN KOLUMN */
-  gap: 40px;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
 
-  /* MOBIL: vänster */
   align-items: flex-start;
 
-  /* TABLET: centrera kolumnen */
   @media (min-width: 768px) and (max-width: 1023px) {
     align-items: center;
   }
 
-  /* DESKTOP: RAD */
   @media (min-width: 1024px) {
-    flex-direction: row; /* 👈 här tvingar vi RAD */
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    gap: 60px;
+    gap: 10px;
     max-width: 1000px;
     margin: 0 auto;
   }
 `;
 
+/* Component rendering all skill categories */
 export default function SkillsData() {
   return (
     <SkillsSection>

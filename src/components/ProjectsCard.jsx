@@ -5,75 +5,92 @@ import webIcon from "../assets/icons/web.svg";
 import githubIcon from "../assets/icons/github.svg";
 import { Tag } from "./tag";
 
+/* Wrapper for the entire project card.
+   Mobile/Tablet = column layout.
+   Desktop = row or reversed row depending on "reverse" prop. */
 const ProjectCardWrapper = styled.article`
   display: flex;
-  flex-direction: column; /* DEFAULT: mobil + tablet = kolumn */
-  gap: 60px;
+  flex-direction: column;
   background-color: #ffffff;
   color: #000000;
-  padding: 20px 30px;
-  max-width: 1200px;
+  padding: 30px 30px;
+  max-width: 1500px;
   margin: 0 auto;
 
   @media (min-width: 1024px) {
-    /* DESKTOP: rad igen */
     flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
-    gap: 100px;
-    padding: 50px 80px;
+    gap: 20px;
+    padding: 80px 120px;
   }
 `;
 
+/* Column containing the project image */
 const ImageCol = styled.div`
   flex: 1;
-  display: flex;
-  align-items: flex-start; /* bilden fastnar i toppen */
 `;
 
+/* Project preview image */
 const ProjectImage = styled.img`
   width: 100%;
-  max-height: 400px; /* begränsar höjden så de inte blir ENORMT stora */
-  height: auto; /* låter bilden behålla sin proportion */
-  object-fit: contain; /* beskär inget, visar hela Figma-bilden */
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
   display: block;
 `;
+
+/* Column containing title, tags, text and buttons */
 const ContentCol = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   text-align: left;
+  gap: 10px;
+
+  @media (min-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 10px;
+  }
 `;
 
+/* Row displaying all tech tags */
 const TagsRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 2px;
   margin-bottom: 8px;
+  margin-top: 20px;
+
+  @media (min-width: 1024px) {
+    margin-top: 0;
+  }
+  @media (min-width: 768px) {
+    gap: 8px;
+  }
 `;
 
-const Title = styled.h3`
-  margin: 0 0 8px 0;
-  font-size: 28px;
-  font-weight: 700;
-  color: #000;
-`;
-
+/* Project description text */
 const Description = styled.p`
   margin: 0;
   max-width: 100%;
-  font-size: 16px;
   line-height: 1.4;
   color: #000;
 `;
 
+/* Wrapper for the action buttons (live demo / code) */
 const ButtonsWrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 5px;
   align-items: flex-start;
+
+  @media (min-width: 1024px) {
+    margin-top: 24px;
+  }
 `;
 
+/* Icon inside each link button */
 const IconImage = styled.img`
   width: 25px;
   height: 25px;
@@ -81,6 +98,7 @@ const IconImage = styled.img`
 
 const ButtonLabel = styled.span``;
 
+/* Main component for rendering a single project card */
 export default function ProjectsCard({
   title,
   description,
@@ -104,21 +122,20 @@ export default function ProjectsCard({
           ))}
         </TagsRow>
 
-        <Title>{title}</Title>
+        <h3>{title}</h3>
         <Description>{description}</Description>
 
         <ButtonsWrapper>
-          {codeUrl && (
-            <LinkButton href={codeUrl} target="_blank" rel="noreferrer">
-              <IconImage src={githubIcon} alt="GitHub icon" />
-              <ButtonLabel>View Code</ButtonLabel>
-            </LinkButton>
-          )}
-
           {liveUrl && (
             <LinkButton href={liveUrl} target="_blank" rel="noreferrer">
               <IconImage src={webIcon} alt="Web icon" />
               <ButtonLabel>Live demo</ButtonLabel>
+            </LinkButton>
+          )}
+          {codeUrl && (
+            <LinkButton href={codeUrl} target="_blank" rel="noreferrer">
+              <IconImage src={githubIcon} alt="GitHub icon" />
+              <ButtonLabel>View Code</ButtonLabel>
             </LinkButton>
           )}
         </ButtonsWrapper>

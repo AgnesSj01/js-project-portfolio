@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
+/* Reusable tag style used in both the Projects section and My Words section */
 export const Tag = styled.span`
-  flex: 1; /* 👈 alla taggar delar på bredden */
+  width: 60px;
   text-align: center;
-  padding: 5px 5px;
-  font-size: 13px;
+  font-size: 11px;
+  font-weight: 500;
   border: 2px solid black;
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    width: 130px;
+    font-size: 15px;
+  }
 `;

@@ -3,46 +3,98 @@ import agnesImg from "../assets/Agnes.jpg";
 import CoffeeImg from "../assets/Coffee.jpg";
 import sunflowerImg from "../assets/sunflower.jpg";
 
+/* 
+  Main wrapper for the hero section.
+  Uses flex layout so child elements can be reordered on mobile.
+*/
 const HeroSection = styled.section`
   padding: 40px 16px;
   text-align: center;
   background-color: #ffffff;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-  p {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto;
-  }
-  h3 {
-    text-align: center;
-    max-width: 750px;
-    margin: auto;
+/* Intro heading shown above the name */
+const IntroTitle = styled.h3`
+  margin: 0 0 8px;
+  line-height: 1.2;
+
+  @media (max-width: 767px) {
+    order: 1;
   }
 `;
 
+/* Main name/title element */
 const Name = styled.h1`
-  margin: 8px 0 8px;
-
+  margin: 8px 0 16px;
   font-weight: 800;
   text-align: center;
+  line-height: 1.1;
+
+  @media (max-width: 767px) {
+    order: 2;
+  }
 `;
 
-// Container som håller alla tre bilderna
+/* Subtitle/tagline describing the person */
+const Tagline = styled.h3`
+  max-width: 750px;
+  margin: 0 auto 16px;
+  padding: 0;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: 767px) {
+    order: 3;
+  }
+`;
+
+/* Main descriptive paragraph */
+const Text = styled.p`
+  text-align: left;
+  max-width: 750px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media (min-width: 768px) {
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  /* Mobile: shown after the images */
+  @media (max-width: 767px) {
+    order: 5;
+  }
+`;
+
+/* Wrapper holding the three overlapping hero images */
 const HeroImages = styled.div`
   position: relative;
-  width: 100%; /* ta aldrig mer än viewportens bredd */
-  max-width: 650px; /* desktop max */
+  width: 100%;
+  max-width: 650px;
   height: 350px;
   margin: 0 auto 70px;
 
   @media (max-width: 767px) {
-    max-width: 320px; /* mobil max-bredd */
+    max-width: 320px;
     height: 200px;
     margin-bottom: 40px;
+    order: 4;
   }
 `;
 
+/* Base style for all side images */
 const SideImage = styled.img`
   position: absolute;
   width: 300px;
@@ -56,6 +108,7 @@ const SideImage = styled.img`
   }
 `;
 
+/* Left image with rotation effect */
 const LeftImage = styled(SideImage)`
   left: 0;
   top: 50px;
@@ -66,6 +119,7 @@ const LeftImage = styled(SideImage)`
   }
 `;
 
+/* Right image with rotation effect */
 const RightImage = styled(SideImage)`
   right: 0;
   top: 50px;
@@ -76,6 +130,7 @@ const RightImage = styled(SideImage)`
   }
 `;
 
+/* Wrapper for the centered main portrait image */
 const CenterImageWrapper = styled.div`
   position: absolute;
   left: 65%;
@@ -98,6 +153,7 @@ const CenterImageWrapper = styled.div`
   }
 `;
 
+/* Portrait image inside the center frame */
 const CenterImage = styled.img`
   width: 290px;
   height: 300px;
@@ -110,10 +166,11 @@ const CenterImage = styled.img`
   }
 `;
 
+// Hero component displaying the intro text, portrait images, and a brief description.
 export default function Hero() {
   return (
     <HeroSection>
-      <h3>Hi there, I´m</h3>
+      <IntroTitle>Hi there, I´m</IntroTitle>
       <Name>Agnes Sjösten</Name>
 
       <HeroImages>
@@ -124,14 +181,16 @@ export default function Hero() {
         </CenterImageWrapper>
       </HeroImages>
 
-      <h3>Agnes is a creative developer with a background in social work.</h3>
+      <Tagline>
+        Agnes is a creative developer with a background in social work.
+      </Tagline>
 
-      <p>
+      <Text>
         After exploring the world and working with people, she became a social
         worker driven by empathy and a desire to make a difference. Today, she
         combines that understanding with her passion for design and technology
         to create meaningful, user-centered digital solutions.
-      </p>
+      </Text>
     </HeroSection>
   );
 }
