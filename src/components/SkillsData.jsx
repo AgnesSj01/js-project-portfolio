@@ -53,6 +53,7 @@ export default function SkillsData() {
             "CSS3",
             "Javascript ES6",
             "React",
+            "React Router",
             "Styled Components",
             "GitHub",
           ]}
