@@ -14,6 +14,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import ArrowDownIcon from "../assets/icons/ArrowDown.svg";
 import Happy from "../assets/Happy.png";
+import MovieImg from "../assets/Movie-app.png";
 
 /* Wrapper section for the entire projects area */
 const ProjectsSection = styled.section`
@@ -83,6 +84,17 @@ const allProjects = [
     liveUrl: "https://legacy-coffee.netlify.app/",
   },
   {
+    title: "Movie-App",
+    description:
+      "A responsive multi-page web application built with React and React Router, using data from The Movie Database (TMDB) API. Developed as part of a Technigo course project in collaboration with another student. The app dynamically displays movies and movie details using URL parameters, with a focus on API integration, reusable components, and clear, user-friendly navigation.",
+    imageSrc: MovieImg,
+    imageAlt: "Screenshot of a Recipe Library website",
+    tags: ["React Router", "React", "Tailwind", "API"],
+    liveUrl: "https://movie-app-reactrouter.netlify.app/",
+    codeUrl: "https://github.com/AgnesSj01/js-project-movies",
+    reverse: true,
+  },
+  {
     title: "Weather app",
     description:
       "This was our first mob-programming project during Technigo’s Web Development Bootcamp, where we collaboratively built a weather application using the SMHI Weather API. Together, we explored how to fetch and display real-time weather data, structure our JavaScript logic as a team, and design a clean, user-friendly interface.",
@@ -91,7 +103,6 @@ const allProjects = [
     tags: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
     liveUrl: "https://weather-project-lar.netlify.app/",
     codeUrl: "https://github.com/AgnesSj01/js-project-weather-app",
-    reverse: true,
   },
   {
     title: "Recipe Library",
@@ -102,6 +113,7 @@ const allProjects = [
     tags: ["HTML5", "CSS3", "JavaScript", "API"],
     liveUrl: "https://inspiring-sundae-2d353c.netlify.app/",
     codeUrl: "https://github.com/AgnesSj01/js-project-recipe-library",
+    reverse: true,
   },
   {
     title: "Reading Room",
@@ -112,7 +124,6 @@ const allProjects = [
     tags: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "https://the-reading-room-accesibility-project.netlify.app/",
     codeUrl: "https://github.com/AgnesSj01/js-project-accessibility",
-    reverse: true,
   },
   {
     title: "Movie app – prototype / visual design",
@@ -123,6 +134,7 @@ const allProjects = [
     tags: ["Figma Design"],
     liveUrl:
       "https://www.figma.com/proto/DKP6X7bdCzr15DLYFb9ARf/Movie-App?node-id=238-1679&starting-point-node-id=301%3A786&t=mgHEJgOWMcnCentK-1&show-proto-sidebar=1",
+    reverse: true,
   },
   {
     title: "Game app – prototype / visual design",
@@ -133,7 +145,6 @@ const allProjects = [
     tags: ["Figma Design"],
     liveUrl:
       "https://www.figma.com/proto/6mTiPD05LYmwh27nDq3KrS/Riddle-Rush?node-id=599-2551&starting-point-node-id=599%3A2551&t=dkTUenL4cQhc9C0j-1",
-    reverse: true,
   },
   {
     title: "Cocktail app – visual design",
@@ -143,6 +154,7 @@ const allProjects = [
     imageAlt: "Screenshots from CoctailApp",
     tags: ["Flutter", " Dart"],
     codeUrl: "https://github.com/AgnesSj01/flutter_recept_app",
+    reverse: true,
   },
   {
     title: "Hay Stack – prototype / visual design",
@@ -153,7 +165,6 @@ const allProjects = [
     tags: ["Figma Design"],
     liveUrl:
       "https://www.figma.com/proto/tvyHQWabUvjfh6CvKQDXa9/Haystack-Hi-Fi-prototyp?node-id=340-6476&t=mjeqyGeD1oi3qzn6-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A11&starting-point-node-id=340%3A6476&show-proto-sidebar=1",
-    reverse: true,
   },
   {
     title: "Happy Thoughts",
@@ -165,6 +176,7 @@ const allProjects = [
     codeUrl:
       "https://github.com/AgnesSj01/js-project-happy-thoughts/blob/main/README.md",
     liveUrl: "https://agnes-happythoughtsproject.netlify.app/",
+    reverse: true,
   },
 ];
 
