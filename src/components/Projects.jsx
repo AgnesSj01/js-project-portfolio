@@ -13,8 +13,9 @@ import HayStackImg from "../assets/HayStack.png";
 import styled from "styled-components";
 import { useState } from "react";
 import ArrowDownIcon from "../assets/icons/ArrowDown.svg";
-import Happy from "../assets/Happy.png";
+import Happy from "../assets/HappyThoughts2.png";
 import MovieImg from "../assets/Movie-app.png";
+import Todoapp from "../assets/Todoapp.png";
 
 /* Wrapper section for the entire projects area */
 const ProjectsSection = styled.section`
@@ -105,16 +106,27 @@ const allProjects = [
     codeUrl: "https://github.com/AgnesSj01/js-project-weather-app",
   },
   {
-    title: "Recipe Library",
+    title: "Happy Thoughts",
     description:
-      "This project was created as part of Technigo’s Web Development Bootcamp, during the module focused on APIs, JSON, fetch() and Promises. The goal was to replace static mock data with real recipe data from the Spoonacular API and build a dynamic, responsive recipe library.",
-    imageSrc: RecipeLibraryImg,
-    imageAlt: "Screenshot of a Recipe Library website",
-    tags: ["HTML5", "CSS3", "JavaScript", "API"],
-    liveUrl: "https://inspiring-sundae-2d353c.netlify.app/",
-    codeUrl: "https://github.com/AgnesSj01/js-project-recipe-library",
+      "I developed a full-stack Happy Thoughts application with a custom Express.js backend and React frontend. The backend includes user authentication with bcrypt password hashing and token-based access control. Users can register, log in, and perform CRUD operations on thoughts (create, read, update, delete, like) - all protected routes require authentication. The API is deployed on Render and uses MongoDB Atlas for data storage. The frontend handles conditional rendering based on login state, stores tokens in localStorage, and displays error messages from the backend. This project deepened my understanding of building secure REST APIs, authentication flows, and connecting frontend to custom backends",
+    imageSrc: Happy,
+    imageAlt: "Screenshot Happy Thoughts site",
+    tags: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "REST API",
+      "Authentication",
+      "Bcrypt",
+    ],
+    codeUrl:
+      "https://github.com/AgnesSj01/js-project-happy-thoughts/blob/main/README.md",
+    liveUrl: "https://agnes-happythoughtsproject.netlify.app/",
     reverse: true,
   },
+
   {
     title: "Reading Room",
     description:
@@ -167,16 +179,33 @@ const allProjects = [
       "https://www.figma.com/proto/tvyHQWabUvjfh6CvKQDXa9/Haystack-Hi-Fi-prototyp?node-id=340-6476&t=mjeqyGeD1oi3qzn6-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A11&starting-point-node-id=340%3A6476&show-proto-sidebar=1",
   },
   {
-    title: "Happy Thoughts",
+    title: "Recipe Library",
     description:
-      "I developed a React-based “Happy Thoughts” app that communicates with a public API. The project focused on component lifecycle, the useEffect hook, state management, and form handling. Users can submit new thoughts, view an updated list in real time, and like posts. I implemented both POST requests and UI updates based on API responses. The main focus was understanding how React applications integrate with external APIs.",
-    imageSrc: Happy,
-    imageAlt: "Screenshot of a coffee themed business site",
-    tags: ["React", "JavaScript", "API Integration"],
-    codeUrl:
-      "https://github.com/AgnesSj01/js-project-happy-thoughts/blob/main/README.md",
-    liveUrl: "https://agnes-happythoughtsproject.netlify.app/",
+      "This project was created as part of Technigo’s Web Development Bootcamp, during the module focused on APIs, JSON, fetch() and Promises. The goal was to replace static mock data with real recipe data from the Spoonacular API and build a dynamic, responsive recipe library.",
+    imageSrc: RecipeLibraryImg,
+    imageAlt: "Screenshot of a Recipe Library website",
+    tags: ["HTML5", "CSS3", "JavaScript", "API"],
+    liveUrl: "https://inspiring-sundae-2d353c.netlify.app/",
+    codeUrl: "https://github.com/AgnesSj01/js-project-recipe-library",
     reverse: true,
+  },
+
+  {
+    title: "Todo App",
+    description:
+      "A React Todo app featuring Zustand for state management, localStorage persistence, and accessible UI. Users can create, toggle, and delete tasks with batch actions and keyboard navigation. Built with focus on clean architecture and separation of concerns.",
+    imageSrc: Todoapp,
+    imageAlt: "Screenshots of Todo-list",
+    tags: [
+      "React",
+      "JavaScript",
+      "Zustand",
+      "localStorage",
+      "Accessibility",
+      "State Management",
+    ],
+    liveUrl: "https://agnestodoapp.netlify.app/",
+    codeUrl: "https://github.com/AgnesSj01/js-project-todo",
   },
 ];
 
