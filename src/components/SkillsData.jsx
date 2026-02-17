@@ -43,7 +43,7 @@ const CategoryRow = styled.div`
 /* Component rendering all skill categories */
 export default function SkillsData() {
   return (
-    <SkillsSection>
+    <SkillsSection id="skills">
       <SkillTitle>Skills</SkillTitle>
       <CategoryRow>
         <SkillCategory
@@ -54,6 +54,8 @@ export default function SkillsData() {
             "Javascript ES6",
             "React",
             "React Router",
+            "Node.js",
+            "Express",
             "Styled Components",
             "GitHub",
           ]}
@@ -61,16 +63,16 @@ export default function SkillsData() {
         <SkillCategory
           label="Toolbox"
           items={[
-            "Atom",
+            "VS Code",
             "Postman",
-            "Adobe Photoshop",
-            "Adobe Illustrator",
             "Figma",
-            "Keynote",
             "Slack",
           ]}
         />
-        <SkillCategory label="Upcoming" items={["Node.js"]} />
+        <SkillCategory
+          label="Data"
+          items={["MongoDB", "REST APIs", "Zustand"]}
+        />
         <SkillCategory
           label="More"
           items={[
@@ -78,6 +80,7 @@ export default function SkillsData() {
             "Communication",
             "Service design",
             "User-centered development",
+            "Web Accessibility",
           ]}
         />
       </CategoryRow>

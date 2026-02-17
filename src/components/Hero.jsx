@@ -169,7 +169,7 @@ const CenterImage = styled.img`
 // Hero component displaying the intro text, portrait images, and a brief description.
 export default function Hero() {
   return (
-    <HeroSection>
+    <HeroSection id="hero">
       <IntroTitle>Hi there, I´m</IntroTitle>
       <Name>Agnes Sjösten</Name>
 

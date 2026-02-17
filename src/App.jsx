@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Tech from "./components/Tech";
 import Projects from "./components/Projects";
@@ -8,23 +9,21 @@ import { GlobalStyle } from "./components/GlobalStyle";
 
 import styled from "styled-components";
 
-/* Main wrapper for the entire page layout */
 const PageWrapper = styled.div`
-  min-height: 100vh; /* sidan minst lika hög som skärmen */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;
 
-/* Content area that grows above the footer */
 const Content = styled.main`
-  flex: 1; /* innehållet tar allt utrymme ovanför footern */
+  flex: 1;
 `;
 
-/* Root application component assembling all sections */
 export const App = () => {
   return (
     <PageWrapper>
       <GlobalStyle />
+      <Navbar />
       <Content>
         <Hero />
         <Tech />

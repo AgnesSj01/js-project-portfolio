@@ -14,19 +14,28 @@ const ProjectCardWrapper = styled.article`
   background-color: #ffffff;
   color: #000000;
   padding: 30px 30px;
-  max-width: 1500px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 16px auto;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
 
   @media (min-width: 1024px) {
     flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
     gap: 20px;
-    padding: 80px 120px;
+    padding: 60px 80px;
   }
 `;
 
 /* Column containing the project image */
 const ImageCol = styled.div`
   flex: 1;
+  overflow: hidden;
+  border-radius: 8px;
 `;
 
 /* Project preview image */
@@ -36,6 +45,11 @@ const ProjectImage = styled.img`
   height: auto;
   object-fit: contain;
   display: block;
+  transition: transform 0.4s ease;
+
+  ${ImageCol}:hover & {
+    transform: scale(1.03);
+  }
 `;
 
 /* Column containing title, tags, text and buttons */
@@ -73,8 +87,8 @@ const TagsRow = styled.div`
 const Description = styled.p`
   margin: 0;
   max-width: 100%;
-  line-height: 1.4;
-  color: #000;
+  line-height: 1.5;
+  color: #444;
 `;
 
 /* Wrapper for the action buttons (live demo / code) */

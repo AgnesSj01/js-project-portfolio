@@ -2,18 +2,20 @@ import styled from "styled-components";
 
 /* Reusable tag style used in both the Projects section and My Words section */
 export const Tag = styled.span`
-  width: 60px;
+  padding: 4px 12px;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  border: 2px solid black;
-  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 
   @media (min-width: 768px) {
-    width: 130px;
-    font-size: 15px;
+    padding: 6px 16px;
+    font-size: 14px;
   }
 `;

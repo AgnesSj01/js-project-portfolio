@@ -7,22 +7,25 @@ export const LinkButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 15px;
+  gap: 12px;
 
   padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 18px;
+  border-radius: 8px;
+  font-size: 16px;
   text-decoration: none;
 
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
 
-  background-color: #000000;
+  background-color: #111;
   color: #ffffff;
   border: none;
 
   cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+
   &:hover {
-    transform: scale(1.03);
+    background-color: #333;
+    transform: translateY(-1px);
   }
 `;
